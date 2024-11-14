@@ -1,0 +1,97 @@
+ <!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Café Delicioso</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h1>Café Delicioso</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#">Inicio</a></li>
+                <li><a href="#">Cafés</a></li>
+                <li><a href="#">Subir Imágenes</a></li>
+                <li><a href="#">Contáctanos</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h2>¡Descubre nuestros cafés y comparte el tuyo!</h2>
+        <p>Sube tu imagen de café y comparte la experiencia.</p>
+    </section>
+
+    <section class="upload">
+        <h2>Sube una imagen de tu café</h2>
+        <form id="upload-form">
+            <input type="file" id="file-input" accept="image/*">
+            <button type="submit">Subir Imagen</button>
+        </form>
+        <div id="image-preview">
+            <h3>Vista previa de tu café:</h3>
+            <img id="preview-img" src="" alt="Vista previa del café" style="max-width: 100%; display: none;">
+        </div>
+    </section>
+
+    <section class="product-gallery">
+        <h2>Cafés más populares</h2>
+        <div class="product-card">
+            <img src="https://via.placeholder.com/300x200?text=Café+Arábica" alt="Café Arábica">
+            <h3>Café Arábica</h3>
+            <p>El café más suave y aromático, perfecto para empezar el día.</p>
+            <span class="price">$5.00</span>
+        </div>
+        <div class="product-card">
+            <img src="https://via.placeholder.com/300x200?text=Café+Robusta" alt="Café Robusta">
+            <h3>Café Robusta</h3>
+            <p>Un café más fuerte con un sabor único, ideal para los amantes de la intensidad.</p>
+            <span class="price">$4.50</span>
+        </div>
+        <div class="product-card">
+            <img src="https://via.placeholder.com/300x200?text=Café+Expreso" alt="Café Expreso">
+            <h3>Café Expreso</h3>
+            <p>Concentrado, rico y cremoso, ideal para los que necesitan energía al instante.</p>
+            <span class="price">$3.50</span>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Café Delicioso. Todos los derechos reservados.</p>
+    </footer>
+
+    <script>
+        // Seleccionar los elementos del DOM
+        const fileInput = document.getElementById('file-input');
+        const previewImg = document.getElementById('preview-img');
+        const uploadForm = document.getElementById('upload-form');
+
+        // Escuchar cuando el usuario selecciona un archivo
+        fileInput.addEventListener('change', function() {
+            const file = fileInput.files[0];  // Obtener el archivo seleccionado
+
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    previewImg.src = e.target.result;  // Asignar la imagen cargada a la vista previa
+                    previewImg.style.display = 'block';  // Mostrar la imagen de vista previa
+                };
+                reader.readAsDataURL(file);  // Leer el archivo como URL de imagen
+            }
+        });
+
+        // Evitar el envío del formulario (no enviamos el archivo a un servidor)
+        uploadForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert("¡Imagen subida exitosamente (solo se muestra en tu navegador)!");
+        });
+    </script>
+</body>
+</html>
+
+
