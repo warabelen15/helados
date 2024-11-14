@@ -1,0 +1,150 @@
+ * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+header {
+    background-color: #6a4f4b;
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .logo h1 {
+    font-size: 2em;
+    color: white;
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+}
+
+header nav ul li {
+    margin-left: 20px;
+}
+
+header nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+
+header nav ul li a:hover {
+    color: #ffe600;
+}
+
+.hero {
+    text-align: center;
+    padding: 60px 20px;
+    background-color: #d4c8b3;
+}
+
+.hero h2 {
+    font-size: 2.5em;
+    color: #6a4f4b;
+}
+
+.hero p {
+    font-size: 1.2em;
+    color: #555;
+}
+
+.upload {
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.upload h2 {
+    font-size: 2em;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+.upload input[type="file"] {
+    margin: 20px 0;
+    padding: 10px;
+    border: 2px solid #6a4f4b;
+    border-radius: 5px;
+}
+
+.upload button {
+    padding: 10px 20px;
+    background-color: #6a4f4b;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+.upload button:hover {
+    background-color: #5a3e37;
+}
+
+#image-preview {
+    margin-top: 20px;
+    display: none;
+}
+
+#image-preview img {
+    max-width: 100%;
+    border: 2px solid #6a4f4b;
+    border-radius: 8px;
+}
+
+.product-gallery {
+    display: flex;
+    justify-content: space-around;
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.product-card {
+    background-color: white;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    width: 300px;
+}
+
+.product-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.product-card h3 {
+    font-size: 1.5em;
+    margin: 15px 0;
+}
+
+.product-card p {
+    font-size: 1em;
+    color: #666;
+}
+
+.product-card .price {
+    font-size: 1.2em;
+    color: #6a4f4b;
+    font-weight: bold;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
